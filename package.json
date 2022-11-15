@@ -1,0 +1,26 @@
+{
+  "name": "generador-perfil-equipo",
+  "version": "1.0.0",
+  "description": "Repositorio para el generador de perfil de equipo",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeRamirezAnzaldo/GENERADOR-PERFIL-EQUIPO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgeRamirezAnzaldo/GENERADOR-PERFIL-EQUIPO/issues"
+  },
+  "homepage": "https://github.com/JorgeRamirezAnzaldo/GENERADOR-PERFIL-EQUIPO#readme",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  }
+}
