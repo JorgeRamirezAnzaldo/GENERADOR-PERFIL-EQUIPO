@@ -143,28 +143,23 @@ function appendFinalData(initText){
     ` \n</main>
     </body>
   </html>`;
-
     const completetext = initText + finaltext;
-
-    fs.appendFileSync("./dist/index.html", completetext);
+    fs.writeFileSync("./dist/index.html", completetext, (err) =>
+    err ? console.error(err) : console.log("Files successfully created"));
 }
+
 
 function createCSSFile(){
     const styletext = fs.readFileSync("./src/srcstyle.css", "utf8");
     fs.writeFileSync("./dist/style.css", styletext);
 }
 
-
-
 function init(){
-
-    
-
+    fs.rmSync("./dist/index.html", {force:true});
+    fs.rmSync("./dist/style.css", {force:true});
     inq.prompt(managerquestions)
     .then((answers) => {
         const manager = new Manager(answers.Name, answers.Id, answers.Email, answers.Office);
-        console.log(manager.OfficeNumber);
-        console.log(manager.getRole());
         initialText = getInitialData();
         initialText = addCard(manager, initialText);
         displayChoices();
@@ -176,39 +171,26 @@ function displayChoices(){
     .then((answers) => {
 
         if (answers.Option == "Add Engineer"){
-
-            console.log("Add engineer selected");
             inq.prompt(engineerquestions)
             .then((answers) => {
                 const engineer = new Engineer(answers.Name, answers.Id, answers.Email, answers.GitHub);
-                console.log(engineer.getGithub());
-                console.log(engineer.getRole());
                 initialText = addCard(engineer, initialText);
                 displayChoices();
             });
 
         }else if(answers.Option == "Add Intern"){
-
-            console.log("Add Intern selected");
             inq.prompt(internquestions)
             .then((answers) => {
                 const intern = new Intern(answers.Name, answers.Id, answers.Email, answers.School);
-                console.log(intern.getSchool());
-                console.log(intern.getRole());
                 initialText = addCard(intern, initialText);
                 displayChoices();
             });
             
         }else if(answers.Option == "Finish team building process"){
-
-            console.log("Finish process");
             appendFinalData(initialText);
             createCSSFile();
         }
     });
 }
-
-
-
 
 init();
