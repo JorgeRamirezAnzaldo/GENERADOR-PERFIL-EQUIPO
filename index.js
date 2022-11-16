@@ -1,5 +1,8 @@
 const inq = require("inquirer");
 const fs = require("fs");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 
 const managerquestions = [
     {
@@ -86,7 +89,9 @@ const internquestions = [
 function init(){
     inq.prompt(managerquestions)
     .then((answers) => {
-        //const manager = new Manager(answers);
+        const manager = new Manager(answers.Name, answers.Id, answers.Email, answers.Office);
+        console.log(manager.OfficeNumber);
+        console.log(manager.getRole());
         displayChoices();
     });
 };
@@ -100,7 +105,9 @@ function displayChoices(){
             console.log("Add engineer selected");
             inq.prompt(engineerquestions)
             .then((answers) => {
-                //const engineer = new Engineer(answers);
+                const engineer = new Engineer(answers.Name, answers.Id, answers.Email, answers.GitHub);
+                console.log(engineer.getGithub());
+                console.log(engineer.getRole());
                 //renderhtml(engineer);
                 displayChoices();
             });
@@ -110,7 +117,9 @@ function displayChoices(){
             console.log("Add Intern selected");
             inq.prompt(internquestions)
             .then((answers) => {
-                //const intern = new Intern(answers);
+                const intern = new Intern(answers.Name, answers.Id, answers.Email, answers.School);
+                console.log(intern.getSchool());
+                console.log(intern.getRole());
                 //renderhtml(intern);
                 displayChoices();
             });
