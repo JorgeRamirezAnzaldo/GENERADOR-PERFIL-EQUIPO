@@ -3,6 +3,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
+let initialText = "";
 
 const managerquestions = [
     {
@@ -87,18 +88,19 @@ const internquestions = [
 ];
 
 
-function appendInitialData(){
+function getInitialData(){
     const content = fs.readFileSync("./src/srcindex.html", "utf8");
-    fs.appendFileSync("./dist/index.html", content);
+    return content;
 }
 
-function addCard(object){
+function addCard(object, initText){
     const Name = object.getName();
     const Id = object.getId();
     const Email = object.getEmail();
     const Role = object.getRole();
     let icon = "";
     let thirdlistitem = "";
+    let text = "";
 
     if(Role == "Manager"){
         const Office = object.OfficeNumber;
@@ -129,16 +131,22 @@ function addCard(object){
         </div>
     </div>`;
 
-    fs.appendFileSync("./dist/index.html", textcard);
+    text = initText + textcard;
+    return text;
+
+    
 
 }
 
-function appendFinalData(){
+function appendFinalData(initText){
     const finaltext = 
     ` \n</main>
     </body>
   </html>`;
-    fs.appendFileSync("./dist/index.html", finaltext);
+
+    const completetext = initText + finaltext;
+
+    fs.appendFileSync("./dist/index.html", completetext);
 }
 
 function createCSSFile(){
@@ -149,13 +157,16 @@ function createCSSFile(){
 
 
 function init(){
+
+    
+
     inq.prompt(managerquestions)
     .then((answers) => {
         const manager = new Manager(answers.Name, answers.Id, answers.Email, answers.Office);
         console.log(manager.OfficeNumber);
         console.log(manager.getRole());
-        appendInitialData();
-        addCard(manager);
+        initialText = getInitialData();
+        initialText = addCard(manager, initialText);
         displayChoices();
     });
 };
@@ -172,7 +183,7 @@ function displayChoices(){
                 const engineer = new Engineer(answers.Name, answers.Id, answers.Email, answers.GitHub);
                 console.log(engineer.getGithub());
                 console.log(engineer.getRole());
-                addCard(engineer);
+                initialText = addCard(engineer, initialText);
                 displayChoices();
             });
 
@@ -184,14 +195,14 @@ function displayChoices(){
                 const intern = new Intern(answers.Name, answers.Id, answers.Email, answers.School);
                 console.log(intern.getSchool());
                 console.log(intern.getRole());
-                addCard(intern);
+                initialText = addCard(intern, initialText);
                 displayChoices();
             });
             
         }else if(answers.Option == "Finish team building process"){
 
             console.log("Finish process");
-            appendFinalData();
+            appendFinalData(initialText);
             createCSSFile();
         }
     });
