@@ -21,7 +21,7 @@ const managerquestions = [
     },
     {
         //Ask for the id of the manager
-        type: "input",
+        type: "number",
         name: "Id",
         message: "Which is the ID of the manager?",
     },
@@ -33,7 +33,7 @@ const managerquestions = [
     },
     {
         //Ask for the office number of the manager
-        type: "input",
+        type: "number",
         name: "Office",
         message: "Which is the office number of the manager?",
     },
@@ -62,7 +62,7 @@ const engineerquestions = [
     },
     {
         //Ask the id of the engineer
-        type: "input",
+        type: "number",
         name: "Id",
         message: "Which is the ID of the engineer?",
     },
@@ -91,7 +91,7 @@ const internquestions = [
     },
     {
         //Ask the id of the intern
-        type: "input",
+        type: "number",
         name: "Id",
         message: "Which is the ID of the intern?",
     },
@@ -171,14 +171,15 @@ function appendFinalData(initText){
   </html>`;
     const completetext = initText + finaltext; //Generate final complete text
     //Create index.html file with the final text
-    fs.writeFileSync("./dist/index.html", completetext, (err) =>
-    err ? console.error(err) : console.log("Files successfully created"));
+    fs.writeFile("./dist/index.html", completetext, (err) =>
+    err ? console.error(err) : console.log("index.html file successfully created"));
 }
 
 //Function to generate the style.css file
 function createCSSFile(){
     const styletext = fs.readFileSync("./src/srcstyle.css", "utf8"); //Read the text from the template for the css file
-    fs.writeFileSync("./dist/style.css", styletext); //Create the style.css file 
+    fs.writeFile("./dist/style.css", styletext, (err) =>
+    err ? console.error(err) : console.log("style.css file successfully created")); //Create the style.css file 
 }
 
 //Function to display the choices, ask the data for the engineer/intern, create their objects and add cards text
