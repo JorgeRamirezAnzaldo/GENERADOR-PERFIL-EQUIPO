@@ -8,7 +8,7 @@ describe("Employee", () => {
         it("should create an object with name, id and email", () =>{ //Employee class should create an object with name, id and email properties
             //Define name, id and email
             let name = "Carl"; 
-            let id = "1";
+            let id = 1;
             let email = "carl@hotmail.com";
             const employee = new Employee(name, id, email); //Create an employee object with defined name, id and email
 
@@ -17,13 +17,14 @@ describe("Employee", () => {
             expect(employee.email).toEqual(email); //Validate that the email property of the employee object is equal to email = "carl@hotmail.com"
     
         });
+        
     });
     //Test the method getName() of the Employee class
     describe("getName", () => {
         it("should return the name of the employee", () =>{ //getName() method should return the name of the employee object
             //Define name, id and email
             let name = "David"; 
-            let id = "2";
+            let id = 2;
             let email = "david@hotmail.com";
             const employee = new Employee(name, id, email); //Create an employee object with defined name, id and email
             const result = employee.getName(); //Use getName() method to get the name property of the employee object
@@ -36,7 +37,7 @@ describe("Employee", () => {
         it("should return the id of the employee", () =>{ //getId() method should return the id of the employee object
             //Define name, id and email
             let name = "John";
-            let id = "30";
+            let id = 30;
             let email = "john@hotmail.com";
             const employee = new Employee(name, id, email); //Create an employee object with defined name, id and email
             const result = employee.getId(); //Use getId() method to get the id property of the employee object
@@ -49,7 +50,7 @@ describe("Employee", () => {
         it("should return the email of the employee", () =>{ //getEmail() method should return the email of the employee object
             //Define name, id and email
             let name = "Marcus";
-            let id = "50";
+            let id = 50;
             let email = "marcus@hotmail.com";
             const employee = new Employee(name, id, email); //Create an employee object with defined name, id and email
             const result = employee.getEmail(); //Use getEmail() method to get the email property of the employee object
@@ -62,7 +63,7 @@ describe("Employee", () => {
         it("should return the role equal to Employee", () =>{ //getRole() method should return "Employee"
             //Define name, id and email
             let name = "Martin";
-            let id = "10";
+            let id = 10;
             let email = "martin@hotmail.com";
             const employee = new Employee(name, id, email); //Create an employee object with defined name, id and email
             const result = employee.getRole(); //Use getRole() method to get the role value from the employee object
