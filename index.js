@@ -134,7 +134,7 @@ function addCard(object, initText){
     } else if (Role == "Engineer"){ //If the employee is an engineer
         const GitHub = object.getGithub(); //Get the Github user of the engineer
         icon = "<i class=\"bi bi-eyeglasses\"></i>"; //Define the icon text for the engineer
-        thirdlistitem = `GitHub: <a href="https://github.com/${GitHub}">${GitHub}</a>`; //Create the text for the GitHub user
+        thirdlistitem = `GitHub: <a href="https://github.com/${GitHub}" target="_blank">${GitHub}</a>`; //Create the text for the GitHub user
     } else if (Role == "Intern"){ //If the employee is an intern
         const School = object.getSchool(); //Get the School of the intern
         icon = "<i class=\"bi bi-mortarboard\"></i>"; //Create the icon text for the intern
