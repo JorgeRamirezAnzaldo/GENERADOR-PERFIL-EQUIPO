@@ -56,8 +56,10 @@
 
 * Para ejecutar las pruebas unitarias:
   * Se tiene que hacer desde la terminal de node.js
-  * Hay que asegurarse de estar en la ubicación de la carpeta principal/raíz de la aplicación: GENERADOR-PERFIL-EQUIPO\
-  * Ejecutar el comando "npm test" en la línea de comando.
+  * Hay que asegurarse de estar en la ubicación de la carpeta principal/raíz de la aplicación: GENERADOR-PERFIL-EQUIPO\  
+    ![Ubicación para ejecutar pruebas](./images/Path.JPG)
+  * Ejecutar el comando "npm test" en la línea de comando.  
+    ![Ejecutar pruebas](./images/EjecutarTests.JPG)
 
 * Las pruebas unitarias se ubican en la carpeta Tests/ y realizan pruebas sobre las clases de los archivos ubicados en la carpeta lib/:
 
@@ -78,7 +80,10 @@
     * El archivo Intern.test.js se encarga de hacer pruebas unitarias sobre la clase Intern del archivo Intern.js:
         * Valida que se lancen los correspondientes errores si algún dato (nombre, identificador, correo electrónico o escuela) no fue introducido en el formato adecuado.
         * Valida que se cree un pasante con nombre, identificador, correo electrónico y escuela.
-        * Valida que se regrese el nombre, el identificador, el correo electrónico, el rol y la escuela del pasante con los métodos adecuados.  
+        * Valida que se regrese el nombre, el identificador, el correo electrónico, el rol y la escuela del pasante con los métodos adecuados. 
+
+* Al ejecutar las pruebas, el resultado debe mostrar 4 Test Suites y 53 Tests con status PASSED.  
+  ![Pruebas exitosas](./images/PruebasExitosas.JPG)
         
 
 ## Enlace a video de funcionalidad de la aplicación
