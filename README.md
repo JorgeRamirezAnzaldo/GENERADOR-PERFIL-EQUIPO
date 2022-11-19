@@ -88,7 +88,7 @@
 
 ## Enlace a video de funcionalidad de la aplicación
 
-* [Link a video]()
+* [Link a video](https://drive.google.com/file/d/1WNxs2EjjLXmKEq5to0mNVHpAzl8lAU4i/view)
 
 ## Muestra de una página web HTML creada dinámicamente con la información de un equipo
 
