@@ -37,12 +37,12 @@
 
 ## Información de uso de la aplicación 
 
-* Primero introduce la información completa del gerente respetando el formato de cada dato solicitado. Cada vez que introduzcas un nuevo dato presiona ENTER para poder llenar el siguiente dato.
+* Primero introduce la información completa del gerente respetando el formato de cada dato solicitado. Cada vez que introduzcas un nuevo dato presiona ENTER para poder llenar el siguiente dato.  
   ![Información de gerente](./images/Manager.JPG)
-* Cuando termines de llenar la información del gerente, se te presentará un menú de opciones donde puedes elegir si quieres agregar un ingeniero, un pasante o terminar el proceso.
+* Cuando termines de llenar la información del gerente, se te presentará un menú de opciones donde puedes elegir si quieres agregar un ingeniero, un pasante o terminar el proceso.  
   ![Lista de opciones](./images/Lista.JPG)
 * Selecciona la opción que desees de la lista desplazándote con las flechas del teclado y presionando ENTER.
-* Si decidiste agregar un ingeniero o pasante, llena la información de cada uno. Cada vez que introduzcas un nuevo dato presiona ENTER para poder llenar el siguiente dato.
+* Si decidiste agregar un ingeniero o pasante, llena la información de cada uno. Cada vez que introduzcas un nuevo dato presiona ENTER para poder llenar el siguiente dato.  
   ![Información de ingeniero](./images/Engineer.JPG)      ![Información de pasante](./images/Intern.JPG)
 * Al terminar de llenar la información del ingeniero o pasante, se desplegará de nuevo el menú de opciones para agregar otro ingeniero o pasante. De esta manera puedes generar tu equipo completo.
 * En cualquier momento que se te presente el menú de opciones y decidas seleccionar la opción de terminar el proceso, se crearán los archivos para la página web HTML con la información introducida. Si el proceso fue exitoso, aparecerán los siguientes mensajes en la terminal:
